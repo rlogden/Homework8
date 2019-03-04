@@ -10,7 +10,6 @@ public class RandomStrings {
             String generatedString = createRandomAlphaNumericString(5);
             if (containsNumbers(generatedString)) {
                 System.out.println("Unused string - A string with a number was created: " + generatedString);
-                stringArray[i] = generatedString;
             } else if (generatedString.matches("([AEIOU]).*")) {
                 stringArray[i] = generatedString;
                 i++;
