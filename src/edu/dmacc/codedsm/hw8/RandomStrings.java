@@ -15,7 +15,6 @@ public class RandomStrings {
                 i++;
             }
         }
-
         for (int a = 0; a < stringArray.length; a++) {
             System.out.println(stringArray[a]);
         }
