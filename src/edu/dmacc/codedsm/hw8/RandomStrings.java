@@ -1,20 +1,25 @@
 package edu.dmacc.codedsm.hw8;
 
 import java.util.Random;
-import java.util.Arrays;
 
 public class RandomStrings {
     public static void main(String[] args) {
         String[] stringArray = new String[5];
-        for (int i = 0; i < stringArray.length; i++) {
+        int i = 0;
+        while (i < stringArray.length) {
             String generatedString = createRandomAlphaNumericString(5);
-            if (!containsNumbers(generatedString)) {
-                stringArray[i] = generatedString;
-            } else {
+            if (containsNumbers(generatedString)) {
                 System.out.println("Unused string - A string with a number was created: " + generatedString);
+                stringArray[i] = generatedString;
+            } else if (generatedString.matches("([AEIOU]).*")) {
+                stringArray[i] = generatedString;
+                i++;
             }
         }
-        System.out.println(Arrays.toString(stringArray));
+
+        for (int a = 0; a < stringArray.length; a++) {
+            System.out.println(stringArray[a]);
+        }
     }
 
     public static boolean containsNumbers(String input) {
